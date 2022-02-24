@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comic;
 
 class ComicController extends Controller
 {
@@ -24,6 +25,7 @@ class ComicController extends Controller
     public function create()
     {
         //
+        return view('admin.comics.create');
     }
 
     /**
@@ -35,6 +37,15 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $newComics = new Comic();
+        $newComics->fill($data);
+        $saved = $newComics->save();
+        if (!$saved) {
+            dd('Salvataggio non riuscito');
+        }
+
+        return redirect()->route('comics.show', $newComics->id);
     }
 
     /**
@@ -43,9 +54,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
         //
+        return view('admin.comics.show', ['comic' => $comic]);
     }
 
     /**
