@@ -12173,3 +12173,7 @@ fieldset:disabled .btn {
   }
 }
 
+.card .card-price::after {
+  content: "\20AC";
+}
+

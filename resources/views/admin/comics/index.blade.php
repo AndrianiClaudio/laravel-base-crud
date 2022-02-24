@@ -6,16 +6,22 @@
 
 @section('content')
 <div class="container">
-  @foreach ($comics as $comic)
+  <h1>All Comics</h1>
+  @foreach ($comics->toArray() as $comic)
   <div class="row">
     <div class="col">
-      <ul>
-        @foreach ($comic->toArray() as $key => $value)
-        <li>
-              {{$key}} : {{$value}}
-        </li>
-        @endforeach
-      </ul>
+      <div class="card text-center">
+        <div class="card-img-top">
+          <img src="{{$comic['poster']}}" alt="{{$comic['name']}}">
+        </div>
+        <div class="card-body">
+          <h2>{{$comic['name']}}</h2>
+          <h3>{{$comic['series']}}</h3>
+          <p>{{$comic['description']}}</p>
+          <h4>On sale: {{$comic['sale_date']}}</h4>
+          <b>Price: </b> <span class="card-price">{{$comic['price']}}</span>
+        </div>
+      </div>
     </div>
   </div>
   @endforeach

@@ -1,2 +1,10 @@
 //
 @import '~bootstrap/scss/bootstrap';
+
+.card {
+  .card-price {
+    &::after {
+      content: '\20AC';
+    }
+  }
+}
