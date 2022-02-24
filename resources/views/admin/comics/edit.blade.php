@@ -8,7 +8,6 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      {{-- {{dd($comic)}} --}}
       <form action="{{route('comics.update',$comic->id)}}" method="post">
         @csrf
         @method('PUT')
