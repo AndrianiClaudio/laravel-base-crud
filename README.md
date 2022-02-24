@@ -4,8 +4,13 @@
 -   # Utilizzate Bootstrap
 
     1. npm install
-    2. npm install bootstrap
-    3. in app.scss imporiamo bootstrap, ricordandosi di includere in html il link ad app.css
+    1. npm install bootstrap
+    1. in app.scss imporiamo bootstrap, ricordandosi di includere in html il link ad app.css
+
+-   # Rimuovere fzazinotto faker ed installo fakerphp
+
+    1. composer remove fzazinotto/fakerphp
+    1. composer require fakerphp/faker
 
 -   # Tramite gli appositi comandi artisan create un model con relativa migration e un resource controller.
 
