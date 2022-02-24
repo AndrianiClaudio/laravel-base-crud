@@ -15,4 +15,5 @@
       </li>
       @endforeach
     </ul>
+    <a href="{{route('comics.index')}}" class="link-primary">Back to Comics</a>
 @endsection

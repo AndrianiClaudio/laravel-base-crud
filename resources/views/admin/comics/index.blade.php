@@ -12,22 +12,24 @@
   @foreach ($comics->toArray() as $comic)
   <div class="row">
     <div class="col">
-      <div class="card text-center">
+      <div class="card text-center p-3">
         <div class="card-img-top">
-          <img src="{{$comic['poster']}}" alt="{{$comic['name']}}">
+          <a href="{{route('comics.show',$comic['id'])}}" class="link-dark text-uppercase text-decoration-none" title="Show {{$comic['name']}} detail">
+            <img src="{{$comic['poster']}}" alt="{{$comic['name']}}">
+          </a>
         </div>
         <div class="card-body">
           <h2>
-            <a href="{{route('comics.show',$comic['id'])}}" class="link-dark">{{$comic['name']}}</a>
+            <a href="{{route('comics.show',$comic['id'])}}" class="text-uppercase text-decoration-none text-primary" title="Show {{$comic['name']}} detail">{{$comic['name']}}</a>
           </h2>
-          <h3>{{$comic['series']}}</h3>
+          <h3 class="text-warning">{{$comic['series']}}</h3>
           <p>{{$comic['description']}}</p>
           <h4>On sale: {{$comic['sale_date']}}</h4>
           <div>
-            <b>Price: </b> <span class="card-price">{{$comic['price']}}</span>
+            <b>Price: </b> <span class="card-price text-success">{{$comic['price']}}</span>
           </div>
           <div>
-            <b>Rated: </b> <span>{{$comic['rated']}}</span>
+            <b>Rated: </b> <span>{{$comic['rated']}} / 10</span>
           </div>
         </div>
       </div>
