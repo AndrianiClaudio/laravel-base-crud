@@ -4,6 +4,8 @@
     Create a new comics
 @endsection
 
+@include('guest.header')
+
 @section('content')
 <div class="container">
   <div class="row">

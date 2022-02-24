@@ -4,6 +4,8 @@
     Show all Comics
 @endsection
 
+@include('guest.header')
+
 @section('content')
 <div class="container">
   <h1>All Comics</h1>

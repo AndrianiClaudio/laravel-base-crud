@@ -23,4 +23,8 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/comics', 'ComicController@store')->name('comics.store');
 
 
+Route::get('/', function () {
+  return view('guest.layouts.home');
+})->name('home');
+
 Route::resource('comics', 'ComicController');

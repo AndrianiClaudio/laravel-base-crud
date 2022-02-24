@@ -4,6 +4,8 @@
     Show a Comic
 @endsection
 
+@include('guest.header')
+
 @section('content')
     {{-- {{dd($comic)}} --}}
     <ul class="list-group">
