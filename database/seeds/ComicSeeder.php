@@ -22,6 +22,7 @@ class ComicSeeder extends Seeder
             $newComic->description = $faker->text();
             $newComic->sale_date = $faker->date();
             $newComic->page_count = $faker->numberBetween(15, 120);
+            $newComic->rated = $faker->numberBetween(0, 10);
 
             $newComic->save();
         }

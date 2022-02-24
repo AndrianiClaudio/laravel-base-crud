@@ -14,7 +14,6 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
         $comics = Comic::all();
         return view('admin.comics.index', compact('comics'));
     }
@@ -26,7 +25,6 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
         return view('admin.comics.create');
     }
 
@@ -38,7 +36,6 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $data = $request->all();
         $newComics = new Comic();
         $newComics->fill($data);
@@ -58,7 +55,6 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
         return view('admin.comics.show', ['comic' => $comic]);
     }
 
@@ -93,14 +89,14 @@ class ComicController extends Controller
         return redirect()->route('comics.show', ['comic' => $comic]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function destroy($id)
+    // {
+    //     //
+    // }
 }

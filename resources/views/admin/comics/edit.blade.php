@@ -42,6 +42,10 @@
           <label for="page_count" class="form-label">Page Count</label>
           <input type="text" name="page_count" id="page_count" class="form-control" value="{{$comic->page_count}}"></label>
         </div>
+        <div class="mb-3">
+          <label for="rated" class="form-label">Rated</label>
+          <input type="text" name="rated" id="rated" class="form-control" value="{{$comic->rated}}"></label>
+        </div>
         <button type="submit" class="btn btn-primary">Salva i dati</button>
 
       </form>

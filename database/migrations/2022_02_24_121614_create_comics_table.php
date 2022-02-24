@@ -30,6 +30,7 @@ class CreateComicsTable extends Migration
             // 'page_count'
             $table->integer('page_count');
             // 'rated'
+            $table->smallInteger('rated');
             $table->timestamps();
         });
     }

@@ -22,6 +22,7 @@
           <p>{{$comic['description']}}</p>
           <h4>On sale: {{$comic['sale_date']}}</h4>
           <b>Price: </b> <span class="card-price">{{$comic['price']}}</span>
+          <b>Rated: </b> <span>{{$comic['rated']}}</span>
         </div>
       </div>
     </div>
