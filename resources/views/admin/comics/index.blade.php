@@ -36,6 +36,8 @@
     </div>
   </div>
   @endforeach
-  {{$comics->links()}}
+  <div class="row">
+      {{$comics->links()}}
+  </div>
 </div>
 @endsection

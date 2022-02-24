@@ -12177,3 +12177,7 @@ fieldset:disabled .btn {
   content: "\20AC";
 }
 
+ul.pagination {
+  justify-content: center;
+}
+
