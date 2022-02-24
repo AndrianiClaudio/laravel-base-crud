@@ -9,7 +9,7 @@
 @section('content')
 <div class="container">
   <h1>All Comics</h1>
-  @foreach ($comics->toArray() as $comic)
+  @foreach ($comics as $comic)
   <div class="row">
     <div class="col">
       <div class="card text-center p-3">
@@ -36,5 +36,6 @@
     </div>
   </div>
   @endforeach
+  {{$comics->links()}}
 </div>
 @endsection
