@@ -17,12 +17,18 @@
           <img src="{{$comic['poster']}}" alt="{{$comic['name']}}">
         </div>
         <div class="card-body">
-          <h2>{{$comic['name']}}</h2>
+          <h2>
+            <a href="{{route('comics.show',$comic['id'])}}" class="link-dark">{{$comic['name']}}</a>
+          </h2>
           <h3>{{$comic['series']}}</h3>
           <p>{{$comic['description']}}</p>
           <h4>On sale: {{$comic['sale_date']}}</h4>
-          <b>Price: </b> <span class="card-price">{{$comic['price']}}</span>
-          <b>Rated: </b> <span>{{$comic['rated']}}</span>
+          <div>
+            <b>Price: </b> <span class="card-price">{{$comic['price']}}</span>
+          </div>
+          <div>
+            <b>Rated: </b> <span>{{$comic['rated']}}</span>
+          </div>
         </div>
       </div>
     </div>
