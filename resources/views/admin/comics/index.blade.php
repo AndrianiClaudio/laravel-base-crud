@@ -13,7 +13,9 @@
 </div>
 @endif
 <div class="container">
+  @if(count($comics) > 0)
   <h1>All Comics</h1>
+  @endif
   @foreach ($comics as $comic)
   <div class="row">
     <div class="col">

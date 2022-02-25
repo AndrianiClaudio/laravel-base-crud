@@ -30,5 +30,15 @@
           </form>
         </div>
       </div>
+      <div class="col">
+        <div class="card-delete">
+          <form action="{{route('comics.destroy',$comic)}}" method="post" class="bg-danger p-2">
+            @csrf
+            @method('delete')
+            <button type="submit" class="d-block btn btn-danger border-2 border-warning mx-auto text-uppercase text-warning">Delete this comic</button>
+          </form>
+        </div>
+      </div>
+      </div>
     </div>
 @endsection

@@ -40,11 +40,11 @@ class ComicController extends Controller
             'name' => 'required | max:80',
             'poster' => 'required',
             'series' => 'required | max:80',
-            'price' => 'required | numeric',
+            'price' => 'required | numeric | gt:0',
             'description' => 'required',
             'sale_date' => 'required',
-            'page_count' => 'required | integer',
-            'rated' => 'required',
+            'page_count' => 'required | integer | min:1',
+            'rated' => 'required | between:0,10',
         ]);
         $newComics = new Comic();
         $newComics->fill($validateData);
@@ -92,11 +92,11 @@ class ComicController extends Controller
             'name' => 'required | max:80',
             'poster' => 'required',
             'series' => 'required | max:80',
-            'price' => 'required | numeric',
+            'price' => 'required | numeric | gt:0',
             'description' => 'required',
-            'sale_date' => 'required | date',
-            'page_count' => 'required | integer',
-            'rated' => 'required',
+            'sale_date' => 'required',
+            'page_count' => 'required | integer | min:1',
+            'rated' => 'required | integer |  between:0,10',
         ]);
         // dd($validateData);
 
