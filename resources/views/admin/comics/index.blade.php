@@ -40,7 +40,14 @@
             <form action="{{route('comics.destroy',$comic)}}" method="post">
               @csrf
               @method('delete')
-              <button type="submit" class="btn btn-warning">Delete this comic</button>
+              <button type="submit" class="btn btn-danger">Delete this comic</button>
+            </form>
+          </div>
+          <div class="card-edit">
+            <form action="{{route('comics.edit',$comic)}}" method="get">
+              @csrf
+              @method('GET')
+              <button type="submit" class="btn btn-warning">Edit this comic</button>
             </form>
           </div>
         </div>

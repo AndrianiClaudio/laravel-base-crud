@@ -75,7 +75,6 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-
         return view('admin.comics.edit', ['comic' => $comic]);
     }
 
@@ -97,7 +96,7 @@ class ComicController extends Controller
             'description' => 'required',
             'sale_date' => 'required | date',
             'page_count' => 'required | integer',
-            'rated' => 'required | lge:10',
+            'rated' => 'required',
         ]);
         // dd($validateData);
 
