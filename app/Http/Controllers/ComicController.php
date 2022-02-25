@@ -36,9 +36,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $validateData = $request->validate([
+            'name' => 'required | max:80',
+            'poster' => 'required',
+            'series' => 'required | max:80',
+            'price' => 'required | numeric',
+            'description' => 'required',
+            'sale_date' => 'required',
+            'page_count' => 'required | integer',
+            'rated' => 'required',
+        ]);
         $newComics = new Comic();
-        $newComics->fill($data);
+        $newComics->fill($validateData);
         $saved = $newComics->save();
         if (!$saved) {
             dd('Salvataggio non riuscito');
@@ -66,6 +75,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
+
         return view('admin.comics.edit', ['comic' => $comic]);
     }
 
@@ -78,8 +88,21 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
-        $updated = $comic->update($data);
+        // dd($request->all());
+        $validateData = $request->validate([
+            'name' => 'required | max:80',
+            'poster' => 'required',
+            'series' => 'required | max:80',
+            'price' => 'required | numeric',
+            'description' => 'required',
+            'sale_date' => 'required | date',
+            'page_count' => 'required | integer',
+            'rated' => 'required | lge:10',
+        ]);
+        // dd($validateData);
+
+        // $data = $request->all();
+        $updated = $comic->update($validateData);
 
         if (!$updated) {
             dd('Update non riuscito.');
@@ -96,7 +119,6 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        // dd($comic);
         return redirect()
             ->route('comics.index')
             ->with('status', $comic->name . ' deleted.');
