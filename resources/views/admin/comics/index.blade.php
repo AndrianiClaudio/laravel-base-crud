@@ -7,6 +7,11 @@
 @include('guest.header')
 
 @section('content')
+@if(session('status'))
+<div class="bg-success p-3 text-uppercase text-white">
+  <b>{{session('status')}}</b>
+</div>
+@endif
 <div class="container">
   <h1>All Comics</h1>
   @foreach ($comics as $comic)
@@ -30,6 +35,13 @@
           </div>
           <div>
             <b>Rated: </b> <span>{{$comic['rated']}} / 10</span>
+          </div>
+          <div class="card-delete">
+            <form action="{{route('comics.destroy',$comic)}}" method="post">
+              @csrf
+              @method('delete')
+              <button type="submit" class="btn btn-warning">Delete this comic</button>
+            </form>
           </div>
         </div>
       </div>
